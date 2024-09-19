@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3j13xbhk82hp"]
+
+[ext_resource type="PackedScene" uid="uid://cl1l2iqn8epqj" path="res://objects/level_1.tscn" id="1_vs7f7"]
+[ext_resource type="Script" path="res://objects/Global.gd" id="1_wm8dj"]
+[ext_resource type="PackedScene" uid="uid://bj8tf5aitafuf" path="res://objects/main_character.tscn" id="2_5famy"]
+[ext_resource type="PackedScene" uid="uid://b5eojqoal5e8r" path="res://objects/star.tscn" id="3_xkkf2"]
+[ext_resource type="Script" path="res://objects/label.gd" id="4_htxnx"]
+
+[node name="main scene" type="Node2D"]
+script = ExtResource("1_wm8dj")
+
+[node name="level 1" parent="." instance=ExtResource("1_vs7f7")]
+position = Vector2(2, -15)
+
+[node name="main character" parent="." instance=ExtResource("2_5famy")]
+position = Vector2(65, 133)
+scale = Vector2(0.6, 0.6)
+
+[node name="Camera2D" type="Camera2D" parent="main character"]
+position = Vector2(375, 55)
+scale = Vector2(1.66667, 1.66667)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+
+[node name="Control" type="Control" parent="main character/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="main character/Camera2D/Control"]
+layout_mode = 0
+offset_left = -278.0
+offset_top = -152.0
+offset_right = -236.0
+offset_bottom = -129.0
+text = "score"
+script = ExtResource("4_htxnx")
+
+[node name="star" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(153, 100)
+
+[node name="star2" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(279, 158)
+
+[node name="star3" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(425, 175)
+
+[node name="star4" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(558, 202)
+
+[node name="star5" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(619, 90)
+
+[node name="star6" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(750, 123)
+
+[node name="star7" parent="." instance=ExtResource("3_xkkf2")]
+position = Vector2(360, 85)
